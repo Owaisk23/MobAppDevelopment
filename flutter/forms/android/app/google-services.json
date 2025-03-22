@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417548280417",
+    "project_id": "t3-register",
+    "storage_bucket": "t3-register.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417548280417:android:8c3c37ab7f2ca5cf7b4020",
+        "android_client_info": {
+          "package_name": "com.example.forms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXO3EfvMbUfXk1Jnkd-VBN-6o1v37oREA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
