@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
@@ -14,10 +16,24 @@ class _RegistrationState extends State<Registration> {
     TextEditingController UserEmail = new TextEditingController();
     TextEditingController UserPassword = new TextEditingController();    
 
-    void formSubmit() {
+    Future<void> formSubmit()async {
       print('Name: ${UserName.text}');
       print('Email: ${UserEmail.text}');
       print('Password: ${UserPassword.text}');
+
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: UserEmail.text,
+        password: UserPassword.text,
+      );
+
+      print('User: ${userCredential}');
+
+      await FirebaseFirestore.instance.collection('users').doc(userCredential.user!.uid).set({
+        'username': UserName.text,
+        'userrole': 'customer',
+        'useremail': UserEmail.text,
+        'userpassword': UserPassword.text,
+      });
     }
 
 
