@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:forms/ListViewSec.dart';
 import 'package:forms/Start.dart';
 import 'package:forms/firebase_options.dart';
 
@@ -12,6 +13,6 @@ void main() async {
   );
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Start(),
+      home: ListViewSec(),
     ),);
 }
