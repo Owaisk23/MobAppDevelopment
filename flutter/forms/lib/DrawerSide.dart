@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forms/Addcat.dart';
 import 'package:forms/Dynamiclist.dart';
 import 'package:forms/Home.dart';
 
@@ -37,7 +38,7 @@ class _DrawerSideState extends State<DrawerSide> {
           ListTile(
             title: Text('Products'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Addcat()));
             },
           ),
         ],
