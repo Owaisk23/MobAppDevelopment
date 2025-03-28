@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -31,6 +33,54 @@ class _CatListState extends State<CatList> {
               final category = categories[index];
               return ListTile(
                 title: Text(category['categoryname']),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: () {
+                        // Handle edit action
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            final TextEditingController controller = TextEditingController(text: category['categoryname']);
+                            return AlertDialog(
+                              title: Text('Edit Category'),
+                              content: TextField(
+                                controller: controller,
+                                decoration: InputDecoration(hintText: "Category Name"),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    FirebaseFirestore.instance
+                                        .collection('categories')
+                                        .doc(category.id)
+                                        .update({'categoryname': controller.text});
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('Save'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.delete),
+                      onPressed: () {
+                        // Handle delete actionIconButton(
+                    FirebaseFirestore.instance
+                        .collection('categories')
+                        .doc(category.id)
+                        .delete();
+                
+                      },
+                    ),
+                  ],
+                )
+
               );
             },
           );
