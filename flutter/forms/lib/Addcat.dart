@@ -73,7 +73,7 @@ class _AddcatState extends State<Addcat> {
                     borderRadius: BorderRadius.zero,
                   ),
                 ),
-                child: Text('Login'),
+                child: Text('Add Category'),
               ),
             ],
           ),
