@@ -9,7 +9,7 @@ void main() async {
     if (response.statusCode == 200) {
       final data = CONVERT.jsonDecode(response.body);
       print(data);
-      List<dynamic> studentInfo = data;
+      List<dynamic> studentInfo = data
       for (var student in studentInfo) {
         print('!!==============================!!');
         print('Name: ${student['studentName']}');
