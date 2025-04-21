@@ -47,8 +47,10 @@ class _ProductState extends State<Product> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                    ElevatedButton(onPressed: (){}, child: Text("Add to Cart",style: TextStyle(color: Colors.white),),style: ElevatedButton.styleFrom(
+                    ElevatedButton(onPressed: (){}, 
+                    child: Text("Add to Cart",
+                    style: TextStyle(color: Colors.white),),
+                    style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 11, 104, 98),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -60,7 +62,9 @@ class _ProductState extends State<Product> {
                       
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Listview()));
 
-                     }, child: Text("Show Details",style: TextStyle(color: Colors.white),),style: ElevatedButton.styleFrom(
+                     }, child: Text("Show Details",
+                     style: TextStyle(color: Colors.white),),
+                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 11, 104, 98),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
