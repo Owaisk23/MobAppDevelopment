@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:forms/ApiProduct.dart';
 import 'package:forms/Dynamiclist.dart';
 import 'package:forms/ListViewSec.dart';
 import 'package:forms/Start.dart';
@@ -14,6 +15,6 @@ void main() async {
   );
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Dynamiclist(),
+      home: ApiProduct(),
     ),);
 }
