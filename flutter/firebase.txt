@@ -26,7 +26,15 @@ firebase login
 flutterfire configure
 flutter pub add firebase_core
 flutter pub add cloud_firestore
+change main func with below code in main.dart;
 
+void main()async {
+
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+  runApp(const MyApp());
+}
 
 //Firebase Authentication
 flutter pub add firebase_auth
